@@ -686,6 +686,7 @@ wipe_data(int confirm) {
     }
     erase_volume("/sd-ext");
     erase_volume("/sdcard/.android_secure");
+    erase_volume("/emmc/.android_secure");
     ui_print("Data wipe complete.\n");
 }
 
@@ -812,7 +813,7 @@ main(int argc, char **argv) {
     printf("Starting recovery on %s", ctime(&start));
 
     ui_init();
-    ui_print(EXPAND(RECOVERY_VERSION)"\n");
+    ui_print(EXPAND(RECOVERY_VERSION)"\nModify by xiaolu\n");
     load_volume_table();
     process_volumes();
     LOGI("Processing arguments.\n");
